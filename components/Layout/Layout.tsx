@@ -27,8 +27,8 @@ const Layout = (props: Props) => {
             </Link>
           </li>
           <li>
-            <Link href="/about">
-              <a>About</a>
+            <Link href="/recipes">
+              <a>Recipes</a>
             </Link>
           </li>
         </ul>
