@@ -1,4 +1,5 @@
 import { Client } from "@notionhq/client";
+import Link from "next/link";
 
 interface Props {
   recipes: any[];
@@ -7,7 +8,13 @@ interface Props {
 const RecipePage = (props: Props) => {
   const { recipes } = props;
 
-  return recipes.map((recipe, index) => <p key={`${index + 1}`}>{recipe}</p>);
+  return recipes.map((recipe, index) => (
+    <p key={recipe.id}>
+      <Link href={`/recipes/${recipe.id}`}>
+        <a>{recipe.title}</a>
+      </Link>
+    </p>
+  ));
 };
 
 export const getStaticProps = async () => {
@@ -22,8 +29,12 @@ export const getStaticProps = async () => {
   const recipes: any[] = [];
 
   data.results.forEach((result) => {
+    console.log(result);
     if (result.type === "child_page") {
-      recipes.push(result.child_page.title);
+      recipes.push({
+        id: result.id,
+        title: result.child_page.title,
+      });
     }
   });
 
