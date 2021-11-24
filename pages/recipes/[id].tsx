@@ -23,7 +23,6 @@ export const getStaticPaths = async () => {
 
   data.results.forEach((result) => {
     if (result.type === "child_page") {
-      console.log('result: ', result.id);
       paths.push({
         params: {
           id: result.id,
@@ -39,7 +38,6 @@ export const getStaticPaths = async () => {
 };
 
 export const getStaticProps = async ({ params: { id } }) => {
-  // fetch details for recipe
   const notion = new Client({
     auth: process.env.NOTION_SECRET,
   });

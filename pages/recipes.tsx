@@ -29,7 +29,6 @@ export const getStaticProps = async () => {
   const recipes: any[] = [];
 
   data.results.forEach((result) => {
-    console.log(result);
     if (result.type === "child_page") {
       recipes.push({
         id: result.id,

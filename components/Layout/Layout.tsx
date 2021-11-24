@@ -2,7 +2,7 @@ import Head from 'next/head';
 import Link from 'next/link';
 
 import styles from '../../styles/Home.module.css';
-import stylesLayout from '../../styles/Layout.module.scss';
+import stylesLayout from './Layout.module.scss';
 
 interface Props {
   children: any;
@@ -14,6 +14,8 @@ const Layout = (props: Props) => {
   return (
     <div className={styles.container}>
       <Head>
+        <title>Nextjs - Notion</title>
+        <meta name="theme-color" content="#0E2370" />
       </Head>
       <header className={stylesLayout.header}>
         <li>
