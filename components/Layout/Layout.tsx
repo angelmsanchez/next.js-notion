@@ -33,6 +33,11 @@ const Layout = (props: Props) => {
             <a>Recipes</a>
           </Link>
         </li>
+        <li>
+          <Link href="/movies">
+            <a>Movies</a>
+          </Link>
+        </li>
       </header>
       <main>
         {children}
